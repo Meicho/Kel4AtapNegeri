@@ -1,4 +1,4 @@
-package com.example.atapnegeri
+package com.example.atapnegeri.activities
 
 import android.app.Activity
 import android.graphics.Color
@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.example.atapnegeri.R
 
 class PeralatanActivity : AppCompatActivity() {
 

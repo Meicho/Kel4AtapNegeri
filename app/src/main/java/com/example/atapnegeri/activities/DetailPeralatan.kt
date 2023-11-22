@@ -1,4 +1,4 @@
-package com.example.atapnegeri
+package com.example.atapnegeri.activities
 
 import android.app.Activity
 import android.graphics.Color
@@ -8,12 +8,13 @@ import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.example.atapnegeri.ListGunung.Companion.setWindowFlag
+import com.example.atapnegeri.R
 
-class DetailTips : AppCompatActivity() {
+class DetailPeralatan : AppCompatActivity() {
+
     lateinit var modelPeralatan: ModelPeralatan
     var strNamaAlat: String? = null
-    var strTips: String? = null
+    var strDeskripsi: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,14 +38,14 @@ class DetailTips : AppCompatActivity() {
         modelPeralatan = intent.getSerializableExtra(DETAIL_PERALATAN) as ModelPeralatan
         if (modelPeralatan != null) {
             strNamaAlat = modelPeralatan.strNamaPeralatan
-            strTips = modelPeralatan.strTipsPeralatan
+            strDeskripsi = modelPeralatan.strDeskripsiPeralatan
 
             Glide.with(this)
                 .load(modelPeralatan.strImagePeralatan)
                 .into(imageAlat)
 
             tvNamaAlat.setText(strNamaAlat)
-            tvDetailAlat.setText(strTips)
+            tvDetailAlat.setText(strDeskripsi)
         }
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -54,7 +55,6 @@ class DetailTips : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
     companion object {
         const val DETAIL_PERALATAN = "DETAIL_PERALATAN"
         fun setWindowFlag(activity: Activity, bits: Int, on: Boolean) {
@@ -68,5 +68,4 @@ class DetailTips : AppCompatActivity() {
             window.attributes = layoutParams
         }
     }
-
 }

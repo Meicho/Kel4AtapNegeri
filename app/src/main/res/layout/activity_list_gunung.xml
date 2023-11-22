@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#fff"
-    tools:context=".ListGunung"
+    tools:context=".activities.ListGunung"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 

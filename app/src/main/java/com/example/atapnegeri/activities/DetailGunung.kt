@@ -1,4 +1,4 @@
-package com.example.atapnegeri
+package com.example.atapnegeri.activities
 
 import android.app.Activity
 import android.graphics.Color
@@ -8,7 +8,8 @@ import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.example.atapnegeri.ListGunung.Companion.setWindowFlag
+import com.example.atapnegeri.activities.ListGunung.Companion.setWindowFlag
+import com.example.atapnegeri.R
 import com.google.android.gms.maps.OnMapReadyCallback
 
 class DetailGunung : AppCompatActivity(), OnMapReadyCallback {

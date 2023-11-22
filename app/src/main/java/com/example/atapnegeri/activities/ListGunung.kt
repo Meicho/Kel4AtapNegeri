@@ -1,4 +1,4 @@
-package com.example.atapnegeri
+package com.example.atapnegeri.activities
 
 import android.app.Activity
 import android.content.res.Configuration
@@ -11,6 +11,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.atapnegeri.R
 import org.json.JSONException
 import java.io.IOException
 
