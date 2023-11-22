@@ -13,12 +13,10 @@ class DetailPeralatan : AppCompatActivity() {
     var strNamaAlat: String? = null
     var strDeskripsi: String? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_peralatan)
 
-        //set transparent statusbar
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
@@ -28,4 +26,26 @@ class DetailPeralatan : AppCompatActivity() {
             setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
             window.statusBarColor = Color.TRANSPARENT
         }
+
+        setSupportActionBar(toolbar)
+        assert(supportActionBar != null)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
+        modelPeralatan = intent.getSerializableExtra(DETAIL_PERALATAN) as ModelPeralatan
+        if (modelPeralatan != null) {
+            strNamaAlat = modelPeralatan.strNamaPeralatan
+            strDeskripsi = modelPeralatan.strDeskripsiPeralatan
+
+            Glide.with(this)
+                .load(modelPeralatan.strImagePeralatan)
+                .into(imageAlat)
+
+            tvNamaAlat.setText(strNamaAlat)
+            tvDetailAlat.setText(strDeskripsi)
+        }
+    }
+    }
+
+
 }
