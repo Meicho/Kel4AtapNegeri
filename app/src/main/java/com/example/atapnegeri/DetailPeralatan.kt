@@ -1,10 +1,12 @@
 package com.example.atapnegeri
 
+import android.app.Activity
 import android.graphics.Color
 import android.graphics.ColorSpace.Model
 import android.os.Build
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -34,6 +36,43 @@ class DetailPeralatan : AppCompatActivity() {
         assert(supportActionBar != null)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+
+        modelPeralatan = intent.getSerializableExtra(DETAIL_PERALATAN) as ModelPeralatan
+        if (modelPeralatan != null){
+            strNamaAlat = modelPeralatan.strNamaperalatan
+            strDeskripsi = modelPeralatan.strDeskripsiPeralatan
+
+            Glide.with(this)
+                .load(modelPeralatan.strNamaPeralatan)
+                .into(imageAlat)
+
+            tvNamaAlat.setText(strNamaAlat)
+            tvDetailAlat.setText(strDeskripsi)
+        }
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home){
+            finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    companion object{
+        const val DETAIL_PERALATAN = "DETAIL_PERALATAN"
+        fun setWindowFlag(activity: Activity, bits: Int, on: Boolean){
+            val window = activity.window
+            val layoutParams = window.attributes
+            if (on){
+                layoutParams.flags = layoutParams.flags or bits
+            }else{
+                layoutParams.flags = layoutParams.flags and bits.inv()
+            }
+            window.attributes = layoutParams
+        }
+    }
+
+
 
 }
