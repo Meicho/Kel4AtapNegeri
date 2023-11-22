@@ -1,5 +1,7 @@
 package com.example.atapnegeri
 
+import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.OnMapReadyCallback
 
@@ -14,5 +16,8 @@ class DetailGunung : AppCompatActivity(), OnMapReadyCallback {
     lateinit var modelGunung: ModelGunung
     lateinit var googleMaps: GoogleMap
 
-    override 
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
+        setContentView(R.layout.activity_detail_gunung)
+    }
 }
