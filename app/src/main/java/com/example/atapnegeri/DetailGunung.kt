@@ -16,8 +16,9 @@ class DetailGunung : AppCompatActivity(), OnMapReadyCallback {
     lateinit var modelGunung: ModelGunung
     lateinit var googleMaps: GoogleMap
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_gunung)
+
     }
 }
