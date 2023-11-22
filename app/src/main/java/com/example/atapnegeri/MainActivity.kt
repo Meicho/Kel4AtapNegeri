@@ -6,10 +6,15 @@ import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import android.widget.Adapter
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import org.json.JSONException
 import org.json.JSONObject
+import java.io.IOException
 import java.nio.charset.StandardCharsets
 
 class MainActivity : AppCompatActivity() {
