@@ -45,5 +45,27 @@ class DetailGunung : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager.findFragmentById(R.idmapView) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
 
+        modelGunung = intent.getSerializableExtra(DETAIL_GUNUNG) as ModelGunung
+        if (modelGunung != null){
+            strLokasiGunung = modelGunung.strLokasiGunung
+            strNamaGunung = modelGunung.strNamaGunung
+            strDeskripsi = modelGunung.strDeskripsi
+            strJalurGunung = modelGunung.strJalurPendakian
+            strInfoGunung = modelGunung.strInfoGunung
+            dblLatitude = modelGunung.strLat
+            dblLongitude = modelGunung.strLong
+
+            Glide.with(this)
+                .load(modelGunung.strImageGunung)
+                .into(imageGunung)
+
+            tvNamaGunung.setText(strNamaGunung)
+            tvLokasiGunung.setText(strLokasiGunung)
+            tvDeskripsi.setText(strDeskripsi)
+            tvJalurGunung.setText(strJalurGunung)
+            tvInfoGunung.setText(strInfoGunung)
+        }
     }
+
+
 }
