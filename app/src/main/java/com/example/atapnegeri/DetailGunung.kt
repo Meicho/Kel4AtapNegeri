@@ -1,9 +1,11 @@
 package com.example.atapnegeri
 
+import android.app.Activity
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -83,6 +85,20 @@ class DetailGunung : AppCompatActivity(), OnMapReadyCallback {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    companion object{
+        const val DETAIL_GUNUNG = "DETAIL_GUNUNG"
+        fun setWindowFlag(activity: Activity, bits: Int, onErrorAction: on: Boolean){
+            val window = activity.window
+            val layoutParams = window.attributes
+            if (on){
+                layoutParams.flags = layoutParams.flags or bits
+            }else{
+                layoutParams.flags = layoutParams.flags and bits.inv()
+            }
+            window.attributes = layoutParams
+        }
     }
 
 
