@@ -37,5 +37,13 @@ class DetailGunung : AppCompatActivity(), OnMapReadyCallback {
             window.statusBarColor = Color.TRANSPARENT
         }
 
+        setSupportActionBar(toolbar)
+        assert(supportActionBar != null)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
+        val mapFragment = supportFragmentManager.findFragmentById(R.idmapView) as SupportMapFragment?
+        mapFragment?.getMapAsync(this)
+
     }
 }
