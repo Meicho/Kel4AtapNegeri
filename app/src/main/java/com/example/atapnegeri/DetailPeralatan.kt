@@ -1,7 +1,9 @@
 package com.example.atapnegeri
 
+import android.app.Activity
 import android.graphics.Color
 import android.os.Build
+import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -45,7 +47,24 @@ class DetailPeralatan : AppCompatActivity() {
             tvDetailAlat.setText(strDeskripsi)
         }
     }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
-
-
+    companion object {
+        const val DETAIL_PERALATAN = "DETAIL_PERALATAN"
+        fun setWindowFlag(activity: Activity, bits: Int, on: Boolean) {
+            val window = activity.window
+            val layoutParams = window.attributes
+            if (on) {
+                layoutParams.flags = layoutParams.flags or bits
+            } else {
+                layoutParams.flags = layoutParams.flags and bits.inv()
+            }
+            window.attributes = layoutParams
+        }
+    }
 }
