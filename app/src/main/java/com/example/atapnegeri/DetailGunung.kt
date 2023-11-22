@@ -66,6 +66,24 @@ class DetailGunung : AppCompatActivity(), OnMapReadyCallback {
             tvInfoGunung.setText(strInfoGunung)
         }
     }
+    override fun onMapReady(googleMap: GoogleMap) {
+        googleMaps = googleMap
+        val latLng = LatLng(dblLatitude, dblLongitude)
+        googleMaps.addMarker(MarkerOptions().position(latLng).title(strNamaGunung))
+        googleMaps.moveCamera(CameraUpdateFactory.newLatLng(latLng))
+        googleMaps.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16f))
+        googleMaps.uiSettings.setAllGesturesEnabled(true)
+        googleMaps.uiSettings.isZoomGesturesEnabled = true
+        googleMaps.isTrafficEnabled = true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
 
 }
