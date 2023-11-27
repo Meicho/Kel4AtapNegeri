@@ -14,4 +14,22 @@ List<ModelGunung>) : RecyclerView.Adapter<ListGunungAdapter.ViewHolder>() {
             LayoutInflater.from(parent.context).inflate(R.layout.list_item_gunung, parent, false)
         return ViewHolder(view)
     }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val data = modelGunung[position]
+
+        Glide.with(context)
+            .load(data.strImageGunung)
+            .into(holder.imageGunung)
+
+        holder.tvNamaGunung.text = data.strNamaGunung
+        holder.tvLokasiGunung.text = data.strLokasiGunung
+
+        holder.cvListGunung.setOnClickListener {
+            val intent = Intent(context, DetailGunungActivity::class.java)
+            intent.putExtra(DetailGunungActivity.DETAIL_GUNUNG, modelGunung[position])
+            context.startActivity(intent)
+        }
+    }
+
 }
