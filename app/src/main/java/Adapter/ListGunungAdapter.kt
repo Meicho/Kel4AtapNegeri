@@ -3,7 +3,11 @@ package Adapter
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.atapnegeri.R
 import com.example.atapnegeri.activities.DetailGunung
@@ -38,4 +42,17 @@ List<ModelGunung>) : RecyclerView.Adapter<ListGunungAdapter.ViewHolder>() {
         return modelGunung.size
     }
 
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var cvListGunung: CardView
+        var imageGunung: ImageView
+        var tvNamaGunung: TextView
+        var tvLokasiGunung: TextView
+
+        init {
+            cvListGunung = itemView.cvListGunung
+            imageGunung = itemView.imageGunung
+            tvNamaGunung = itemView.tvNamaGunung
+            tvLokasiGunung = itemView.tvLokasiGunung
+        }
+    }
 }
