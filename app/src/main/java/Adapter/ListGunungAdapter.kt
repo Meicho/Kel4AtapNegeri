@@ -1,10 +1,12 @@
 package Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.atapnegeri.R
+import com.example.atapnegeri.activities.DetailGunung
 
 class ListGunungAdapter(private val context: Context, private val modelGunung:
 List<ModelGunung>) : RecyclerView.Adapter<ListGunungAdapter.ViewHolder>() {
@@ -26,10 +28,14 @@ List<ModelGunung>) : RecyclerView.Adapter<ListGunungAdapter.ViewHolder>() {
         holder.tvLokasiGunung.text = data.strLokasiGunung
 
         holder.cvListGunung.setOnClickListener {
-            val intent = Intent(context, DetailGunungActivity::class.java)
-            intent.putExtra(DetailGunungActivity.DETAIL_GUNUNG, modelGunung[position])
+            val intent = Intent(context, DetailGunung::class.java)
+            intent.putExtra(DetailGunung.DETAIL_GUNUNG, modelGunung[position])
             context.startActivity(intent)
         }
+    }
+
+    override fun getItemCount(): Int {
+        return modelGunung.size
     }
 
 }
