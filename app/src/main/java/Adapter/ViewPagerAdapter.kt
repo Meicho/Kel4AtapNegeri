@@ -16,4 +16,17 @@ class ViewPagerAdapter(fragmentManager: FragmentManager) : FragmentStatePagerAda
         }
         return fragment!!
     }
+
+    override fun getCount(): Int {
+        return 2
+    }
+
+    override fun getPageTitle(position: Int): CharSequence {
+        var title = ""
+        when (position) {
+            0 -> title = "Peralatan"
+            1 -> title = "Tips"
+        }
+        return title
+    }
 }
