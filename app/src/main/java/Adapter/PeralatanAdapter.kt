@@ -38,4 +38,7 @@ List<ModelPeralatan>) : RecyclerView.Adapter<PeralatanAdapter.ViewHolder>() {
         }
 
     }
+    override fun getItemCount(): Int {
+        return modelPeralatan.size
+    }
 }
