@@ -1,12 +1,11 @@
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48"
+    android:tint="?attr/colorControlNormal">
 
-    <item>
-        <shape android:shape="rectangle">
-            <solid android:color="@android:color/darker_gray" />
-            <corners android:radius="8dp" />
-        </shape>
-    </item>
-
-    <item android:drawable="@drawable/ic_upload" android:gravity="center" />
-
-</layer-list>
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M24,4C14.16,4 6,12.16 6,22s8.16,18 18,18 18,-8.16 18,-18S33.84,4 24,4zm0,27c-6.63,0 -12,-5.37 -12,-12s5.37,-12 12,-12 12,5.37 12,12 -5.37,12 -12,12zM24,10v10H16.5L24,28.5L31.5,20H24z"/>
+</vector>

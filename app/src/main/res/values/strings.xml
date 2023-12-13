@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AtapNegeri</string>
+    <string name="kisah">Ceritakan kisahmu tentang Ekspedisi kali ini!</string>
+    <string name="posting">POSTING</string>
 </resources>

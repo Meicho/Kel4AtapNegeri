@@ -161,19 +161,6 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <RatingBar
-                    android:id="@+id/ratingBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:numStars="5"
-                    android:stepSize="1.0" />
-
-                <Button
-                    android:id="@+id/submitBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Submit Rating" />
-
                 <TextView
                     android:id="@+id/ratingResult"
                     android:layout_width="wrap_content"
