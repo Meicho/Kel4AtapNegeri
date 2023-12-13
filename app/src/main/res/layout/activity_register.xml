@@ -36,15 +36,6 @@
                     android:textStyle="bold"
                     android:fontFamily="sans-serif">
                 </TextView>
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:text="Baru Disini? Pendaftarannya mudah, Hanya butuh beberapa langkah!"
-                    android:textAlignment="center"
-                    android:layout_gravity="center"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="sans-serif"/>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

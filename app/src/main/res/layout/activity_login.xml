@@ -28,24 +28,7 @@
                 android:orientation="vertical"
                 android:padding="10dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:text="Hallo! Mari Kita Mulai!"
-                    android:textColor="@color/black"
-                    android:textSize="24sp"
-                    android:textStyle="bold"></TextView>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:text="Masuk Untuk Melanjutkan."
-                    android:textColor="@color/black"
-                    android:textSize="16sp" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tiEmail1"

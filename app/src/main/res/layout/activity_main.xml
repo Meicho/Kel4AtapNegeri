@@ -12,8 +12,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#fff"
-        app:navigationIcon="@mipmap/ic_launcher">
+        android:background="@color/colorBackground"
+        app:navigationIcon="@drawable/ic_back">
 
         <LinearLayout
             android:layout_width="match_parent"

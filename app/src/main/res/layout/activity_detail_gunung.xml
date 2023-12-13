@@ -1,49 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
     <ImageView
         android:id="@+id/imageGunung"
         android:layout_width="match_parent"
-        android:layout_height="285dp"
+        android:layout_height="280dp"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"/>
-    
+        android:scaleType="fitXY" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="20sp"
         android:layout_marginTop="35dp"
-        android:background="@color/black"
+        android:background="@drawable/bg_rounded"
         android:paddingStart="10dp"
-        app:navigationIcon="@mipmap/ic_launcher"/>
-    
+        app:navigationIcon="@drawable/ic_back" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
-        android:background="@mipmap/ic_launcher">
-        
+        android:background="@drawable/bg_half_rounded">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="32dp">
-                
+
                 <View
                     android:layout_width="35dp"
                     android:layout_height="5dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="12dp"
-                    android:background="@mipmap/ic_launcher"/>
+                    android:background="@drawable/bg_shape" />
+
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,35 +54,45 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp">
-                
+
                 <TextView
+                    android:id="@+id/tvNamaGunung"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
+                    android:textColor="@android:color/black"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:id="@+id/tvNamaGunung"/>
-                
+                    android:textStyle="bold" />
+
                 <ImageView
+                    android:id="@+id/imagePin"
                     android:layout_width="12dp"
                     android:layout_height="12dp"
-                    android:id="@+id/imagePin"
-                    android:layout_below="@id/tvNamaGunung"
+                    android:layout_below="@+id/tvNamaGunung"
                     android:layout_marginTop="8dp"
-                    android:src="@color/teal_700"/>
-                
+                    android:src="@drawable/ic_location" />
+
                 <TextView
+                    android:id="@+id/tvLokasiGunung"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/tvNamaGunung"
+                    android:layout_below="@+id/tvNamaGunung"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_toEndOf="@id/imagePin"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"/>
-                
+                    android:layout_toEndOf="@+id/imagePin"
+                    android:textColor="@android:color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvDeskripsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvLokasiGunung"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
+
             </RelativeLayout>
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -89,6 +102,7 @@
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -139,7 +153,19 @@
                     android:textColor="@android:color/black"
                     android:textSize="14sp" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rating"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
             </LinearLayout>
+
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
+
 </RelativeLayout>

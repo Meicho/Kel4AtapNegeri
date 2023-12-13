@@ -1,5 +1,6 @@
 package com.example.atapnegeri.activities
 
+import Model.ModelMain
 import android.app.Activity
 import android.graphics.Color
 import android.os.Build
