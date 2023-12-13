@@ -1,5 +1,8 @@
 package com.example.atapnegeri.activities
 
+import Adapter.ListGunungAdapter
+import Model.ModelGunung
+import Model.ModelMain
 import android.app.Activity
 import android.content.res.Configuration
 import android.graphics.Color
@@ -13,7 +16,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.atapnegeri.R
 import org.json.JSONException
+import org.json.JSONObject
 import java.io.IOException
+import java.nio.charset.StandardCharsets
 
 class ListGunung : AppCompatActivity() {
 

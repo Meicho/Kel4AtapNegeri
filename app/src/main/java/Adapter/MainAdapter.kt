@@ -1,12 +1,17 @@
 package Adapter
 
+import Model.ModelMain
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.atapnegeri.R
+import com.example.atapnegeri.activities.ListGunung
 
 class MainAdapter(private val context: Context?, private val modelMain: List<ModelMain>) :
 RecyclerView.Adapter<MainAdapter.ViewHolder>() {
@@ -34,14 +39,10 @@ RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
         holder.imagelokasi.setImageResource(imageLokasiDrawable)
 
-        holder.cvListLokasi.setOnClickListener {
+        val onClickListener = holder.cvListLokasi.setOnClickListener {
             val intent = Intent(context, ListGunung::class.java)
-            intent.putExtra(activity_list_gunung.LIST_GUNUNG, modelMain[position])
-            context.startActivity(intent)
-        }
-
-        override fun getItemCount(): Int {
-            return modelMain.size
+            intent.putExtra(ListGunung.LIST_GUNUNG, modelMain[position])
+            context?.startActivity(intent)
         }
 
         class ViewHolder(item: View) : RecyclerView.ViewHolder(itemView) {
@@ -58,6 +59,8 @@ RecyclerView.Adapter<MainAdapter.ViewHolder>() {
 
 
     }
-
+    override fun getItemCount(): Int {
+        return modelMain.size
+    }
 
 }
