@@ -1,5 +1,6 @@
 package com.example.atapnegeri.activities
 
+import Adapter.MainAdapter
 import Model.ModelMain
 import android.app.Activity
 import android.graphics.Color
@@ -9,6 +10,9 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
+import android.widget.Button
+import android.widget.RatingBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.atapnegeri.R
@@ -35,14 +39,19 @@ class MainActivity : AppCompatActivity() {
             window.statusBarColor = Color.TRANSPARENT
 
         }
+        val ratingBar: RatingBar = findViewById(R.id.ratingBar)
+        val submitBtn: Button = findViewById(R.id.submitBtn)
+        val ratingResult: TextView = findViewById(R.id.ratingResult)
+
+        submitBtn.setOnClickListener {
+            val rating = ratingBar.rating
+            ratingResult.text = "Rating: $rating"
 
         setSupportActionBar(toolbar)
         assert(supportActionBar != null)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        mainAdapter = MainAdapter(this, modelMain)
-        rv, Lokasi.setLayoutManager(LinearLayoutManager(this))
         mainAdapter = MainAdapter(this, modelMain)
         rvLokasi.setLayoutManager(LinearLayoutManager(this))
         rvLokasi.setAdapter(mainAdapter)
