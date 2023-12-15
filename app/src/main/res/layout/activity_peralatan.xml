@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_700"
+    android:background="@color/colorBackground"
     android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fff"
+        android:background="@color/colorBackground"
         app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/purple_200"
-            app:navigationIcon="@mipmap/ic_launcher_round">
+            android:background="@color/colorBackground"
+            app:navigationIcon="@drawable/ic_back">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -44,9 +44,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            app:tabBackground="@mipmap/ic_launcher_round"
+            app:tabBackground="@drawable/tab_layout_selector"
             app:tabIndicatorHeight="0dp"
-            app:tabSelectedTextColor="@color/purple_200"
+            app:tabSelectedTextColor="@color/colorBackground"
             app:tabTextColor="@android:color/darker_gray" />
 
     </com.google.android.material.appbar.AppBarLayout>

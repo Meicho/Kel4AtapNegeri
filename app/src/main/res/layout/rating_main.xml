@@ -53,7 +53,7 @@
                 android:id="@+id/rating_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numStars="5"
+                android:numStars="2"
                 android:rating="@{confirmation.rating}" />
 
             <ImageView

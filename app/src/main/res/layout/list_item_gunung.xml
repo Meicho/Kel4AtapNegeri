@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    app:cardBackgroundColor="@color/purple_200"
+    app:cardBackgroundColor="@color/colorBackground"
     app:cardCornerRadius="10dp"
     app:cardElevation="5dp">
 
@@ -18,25 +18,26 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="40dp" />
 
         <ImageView
             android:id="@+id/imageGunung"
             android:layout_width="match_parent"
             android:layout_height="130dp"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY" />
 
         <TextView
+            android:id="@+id/tvNamaGunung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvNamaGunung"
-            android:layout_below="@+id/imageGunung"
+            android:layout_below="@id/imageGunung"
             android:paddingLeft="10dp"
+            android:paddingTop="2dp"
             android:paddingRight="10dp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvLokasiGunung"
