@@ -1,5 +1,6 @@
 package Adapter
 
+import Model.ModelGunung
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.atapnegeri.R
 import com.example.atapnegeri.activities.DetailGunung
 
@@ -21,8 +23,9 @@ List<ModelGunung>) : RecyclerView.Adapter<ListGunungAdapter.ViewHolder>() {
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val data = modelGunung[position]
+
 
         Glide.with(context)
             .load(data.strImageGunung)
@@ -33,10 +36,10 @@ List<ModelGunung>) : RecyclerView.Adapter<ListGunungAdapter.ViewHolder>() {
 
         holder.cvListGunung.setOnClickListener {
             val intent = Intent(context, DetailGunung::class.java)
-            intent.putExtra(DetailGunung.DETAIL_GUNUNG, modelGunung[position])
             context.startActivity(intent)
         }
     }
+
 
     override fun getItemCount(): Int {
         return modelGunung.size
@@ -49,10 +52,10 @@ List<ModelGunung>) : RecyclerView.Adapter<ListGunungAdapter.ViewHolder>() {
         var tvLokasiGunung: TextView
 
         init {
-            cvListGunung = itemView.cvListGunung
-            imageGunung = itemView.imageGunung
-            tvNamaGunung = itemView.tvNamaGunung
-            tvLokasiGunung = itemView.tvLokasiGunung
+            cvListGunung = itemView.findViewById(R.id.cvListGunung)
+            imageGunung = itemView.findViewById(R.id.imageGunung)
+            tvNamaGunung = itemView.findViewById(R.id.tvNamaGunung)
+            tvLokasiGunung = itemView.findViewById(R.id.tvLokasiGunung)
         }
     }
 }

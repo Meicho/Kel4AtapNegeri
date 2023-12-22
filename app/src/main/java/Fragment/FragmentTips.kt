@@ -1,5 +1,7 @@
 package Fragment
 
+import Adapter.TipsAdapter
+import Model.ModelPeralatan
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.atapnegeri.R
 import org.json.JSONException
 import org.json.JSONObject
@@ -17,13 +20,14 @@ class FragmentTips : Fragment() {
 
     var modelPeralatan: MutableList<ModelPeralatan> = ArrayList()
     lateinit var tipsAdapter: TipsAdapter
+    lateinit var rvTips: RecyclerView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_tips, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        rvTips  = view.findViewById(R.id.rvTips)
         tipsAdapter = TipsAdapter(requireContext(), modelPeralatan)
         rvTips.setLayoutManager(LinearLayoutManager(context))
         rvTips.setAdapter(tipsAdapter)

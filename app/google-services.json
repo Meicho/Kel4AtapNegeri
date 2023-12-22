@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1071577057483",
+    "project_id": "atap-negeri",
+    "storage_bucket": "atap-negeri.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071577057483:android:5f7d4510f5f82adcc3734e",
+        "android_client_info": {
+          "package_name": "com.example.atapnegeri"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvtlu6m9RaESxMbTBXD8MTk8Br5xM1CyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071577057483:android:98948b1d450fa37ac3734e",
+        "android_client_info": {
+          "package_name":  "com.example.atapnegeri"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvtlu6m9RaESxMbTBXD8MTk8Br5xM1CyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

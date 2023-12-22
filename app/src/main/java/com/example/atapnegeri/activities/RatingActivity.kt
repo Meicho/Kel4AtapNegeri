@@ -1,7 +1,6 @@
 package com.example.atapnegeri.activities
 
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.atapnegeri.R
@@ -22,17 +21,7 @@ class RatingActivity: AppCompatActivity() {
         val addPhotoImageView: ImageView = findViewById(R.id.add_photo_image_view)
         val postButton: Button = findViewById(R.id.post_button)
 
-        timeTextView.text = ratingActivity.time
-        titleTextView.text = ratingActivity.title
-        usernameTextView.text = ratingActivity.userName
-        descriptionEditText.hint = getString(R.string.kisah)
-        ratingBar.rating = ratingActivity.rating
 
-        if (ratingActivity.addPhoto) {
-            addPhotoImageView.visibility = View.VISIBLE
-        } else {
-            addPhotoImageView.visibility = View.GONE
-        }
 
         postButton.setOnClickListener {
             handlePostButtonClick()

@@ -1,5 +1,6 @@
 package com.example.atapnegeri.activities
 
+import Model.ModelPeralatan
 import android.app.Activity
 import android.graphics.Color
 import android.os.Build
@@ -29,22 +30,16 @@ class DetailTips : AppCompatActivity() {
             window.statusBarColor = Color.TRANSPARENT
         }
 
-        setSupportActionBar(toolbar)
         assert(supportActionBar != null)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        modelPeralatan = intent.getSerializableExtra(DETAIL_PERALATAN) as ModelPeralatan
+
         if (modelPeralatan != null) {
             strNamaAlat = modelPeralatan.strNamaPeralatan
             strTips = modelPeralatan.strTipsPeralatan
 
-            Glide.with(this)
-                .load(modelPeralatan.strImagePeralatan)
-                .into(imageAlat)
 
-            tvNamaAlat.setText(strNamaAlat)
-            tvDetailAlat.setText(strTips)
         }
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

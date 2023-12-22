@@ -37,7 +37,7 @@ RecyclerView.Adapter<MainAdapter.ViewHolder>() {
         else if (data.strLokasi == "Luar Pulau Jawa")
             imageLokasiDrawable = R.drawable.ic_luar_jawa
 
-        holder.imagelokasi.setImageResource(imageLokasiDrawable)
+        holder.imageLokasi.setImageResource(imageLokasiDrawable)
 
         val onClickListener = holder.cvListLokasi.setOnClickListener {
             val intent = Intent(context, ListGunung::class.java)
@@ -45,22 +45,24 @@ RecyclerView.Adapter<MainAdapter.ViewHolder>() {
             context?.startActivity(intent)
         }
 
-        class ViewHolder(item: View) : RecyclerView.ViewHolder(itemView) {
-            var cvListLokasi: CardView
-            var tvLokasi: TextView
-            var imageLokasi: ImageView
 
-            init {
-                cvListLokasi = itemView.cvListLokasi
-                tvLokasi = itemView.tvLokasi
-                imageLokasi = itemView.imageLokasi
-            }
-        }
 
 
     }
     override fun getItemCount(): Int {
         return modelMain.size
+    }
+
+    class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
+        var cvListLokasi: CardView
+        var tvLokasi: TextView
+        var imageLokasi: ImageView
+
+        init {
+            cvListLokasi = itemView.findViewById(R.id.cvListLokasi)
+            tvLokasi = itemView.findViewById(R.id.tvLokasi)
+            imageLokasi = itemView.findViewById(R.id.imageLokasi)
+        }
     }
 
 }

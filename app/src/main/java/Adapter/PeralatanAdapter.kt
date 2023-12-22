@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.atapnegeri.R
 import com.example.atapnegeri.activities.DetailPeralatan
 
@@ -53,10 +54,10 @@ List<ModelPeralatan>) : RecyclerView.Adapter<PeralatanAdapter.ViewHolder>() {
         var tvTipeAlat: TextView
 
         init {
-            cvListPeralatan = itemView.cvListPeralatan
-            imagePeralatan = itemView.imagePeralatan
-            tvNamaAlat = itemView.tvNamaAlat
-            tvTipeAlat = itemView.tvTipeAlat
+            cvListPeralatan = itemView.findViewById(R.id.cvListPeralatan)
+            imagePeralatan = itemView.findViewById(R.id.imagePeralatan)
+            tvNamaAlat = itemView.findViewById(R.id.tvNamaAlat)
+            tvTipeAlat = itemView.findViewById(R.id.tvTipeAlat)
         }
     }
 }

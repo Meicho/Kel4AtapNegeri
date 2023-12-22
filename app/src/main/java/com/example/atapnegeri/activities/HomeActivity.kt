@@ -4,19 +4,25 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import com.example.atapnegeri.R
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var prefManager: PrefManager
+    private lateinit var infoGunung: CardView
+    private lateinit var Peralatan: CardView
+    private lateinit var userProfil: CardView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        infoGunung = findViewById(R.id.infoGunung)
+        Peralatan = findViewById(R.id.Peralatan)
 
         var username: TextView = findViewById(R.id.txUsername)
 
         prefManager = PrefManager(this)
         username.text = prefManager.getUsername().toString()
-        checkLogin()
+
 
         infoGunung.setOnClickListener {
             val intent = Intent(this@HomeActivity, MainActivity::class.java)
@@ -28,10 +34,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        userProfil.setOnClickListener{
-            val intent = Intent(this@HomeActivity, UserProfilActivity::class.java)
-            startActivity(intent)
-        }
+
     }
 
     private fun checkLogin(){

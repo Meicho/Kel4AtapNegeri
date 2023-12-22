@@ -3,10 +3,12 @@ package com.example.atapnegeri.activities
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.atapnegeri.R
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,11 +17,10 @@ class RegisterActivity : AppCompatActivity() {
 
         val btnSignup: Button = findViewById(R.id.btn_signup)
         val tiName: TextInputLayout = findViewById(R.id.tf_uname)
+        val ke_masuk: TextView = findViewById(R.id.ke_masuk)
+        val firebase: FirebaseAuth = FirebaseAuth.getInstance()
         val tiPass: TextInputLayout = findViewById(R.id.tf_pass)
         val tiEmail: TextInputLayout = findViewById(R.id.tf_email)
-        var name = tiName.editText?.text.toString()
-        var pass = tiPass.editText?.text.toString()
-        var email = tiEmail.editText?.text.toString()
 
         ke_masuk.setOnClickListener{
             val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
@@ -27,20 +28,20 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         btnSignup.setOnClickListener {
-            if(tiName.editText?.text?.isNotEmpty() == true && tiEmail.editText?.text?.isNotEmpty() == true && tiPass.editText?.text?.isNotEmpty() == true){
-                if(db.addData(tiName.editText?.text.toString(), tiEmail.editText?.text.toString(),tiPass.editText?.text.toString())){
-                    Toast.makeText(this, "Data Tersimpan!", Toast.LENGTH_SHORT).show()
-                    var intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                    startActivity(intent)
-                }
-                else
-                {
-                    Toast.makeText(this, "Data Sudah Terdaftar!", Toast.LENGTH_SHORT).show()
+            var name = tiName.editText?.text.toString()
+            val pass = tiPass.editText?.text.toString()
+            val email = tiEmail.editText?.text.toString()
+            if (pass.isEmpty() || email.isEmpty()){
+                Toast.makeText(this, "Silahkan Masukkan Semua Data", Toast.LENGTH_SHORT).show()
+            }else{
+                firebase.createUserWithEmailAndPassword(email,pass).addOnSuccessListener {
+                    Toast.makeText(this, "Berhasil Registrasi", Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener {
+                    Toast.makeText(this, "Gagal Registrasi", Toast.LENGTH_SHORT).show()
                 }
             }
-            else{
-                Toast.makeText(this, "Data Tidak Boleh Kosong!", Toast.LENGTH_SHORT).show()
-            }
+
+
         }
     }
 }

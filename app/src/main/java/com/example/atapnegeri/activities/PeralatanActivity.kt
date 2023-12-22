@@ -1,5 +1,6 @@
 package com.example.atapnegeri.activities
 
+import Model.ModelPeralatan
 import android.app.Activity
 import android.graphics.Color
 import android.os.Build
@@ -7,7 +8,10 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.view.WindowManager
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.atapnegeri.R
 
 class PeralatanActivity : AppCompatActivity() {
@@ -15,10 +19,16 @@ class PeralatanActivity : AppCompatActivity() {
     lateinit var modelPeralatan: ModelPeralatan
     var strNamaAlat: String? = null
     var strDeskripsi: String? = null
+    lateinit var tvDetailAlat: TextView
+    lateinit var tvNamaAlat: TextView
+    lateinit var imageAlat: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_peralatan)
+        tvDetailAlat = findViewById(R.id.tvDetailAlat)
+        tvNamaAlat = findViewById(R.id.tvNamaAlat)
+        imageAlat = findViewById(R.id.imageAlat)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
@@ -30,14 +40,13 @@ class PeralatanActivity : AppCompatActivity() {
             window.statusBarColor = Color.TRANSPARENT
         }
 
-        setSupportActionBar(toolbar)
         assert(supportActionBar != null)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
         modelPeralatan = intent.getSerializableExtra(DETAIL_PERALATAN) as ModelPeralatan
         if (modelPeralatan != null){
-            strNamaAlat = modelPeralatan.strNamaperalatan
+            strNamaAlat = modelPeralatan.strNamaPeralatan
             strDeskripsi = modelPeralatan.strDeskripsiPeralatan
 
             Glide.with(this)
